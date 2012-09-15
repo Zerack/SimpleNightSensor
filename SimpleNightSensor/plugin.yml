@@ -1,0 +1,22 @@
+name: SimpleNightSensor
+main: com.gmail.zolljd.simplenightsensor.SimpleNightSensor
+version: 0.1
+depend: [lib24time]
+permissions:
+  simplenightsensor.*:
+    description: Gives access to all SimpleNightSensor commands and actions.
+    children:
+      simplenightsensor.create: true
+      simplenightsensor.count: true
+  simplenightsensor.create:
+    description: Allows a user to create a SimpleNightSensor
+    default: true
+  simplenightsensor.count:
+    description: Allows a user to use /sns count count to view the # of active SimpleNightSensors
+    default: true    
+commands:
+  sns:
+    description: Shows a count of active SimpleNightSensors.
+    usage: Command Usage - "/sns count" 
+    permission: simplenightsensor.count
+    permission-message: You don't have permission to get that information.
